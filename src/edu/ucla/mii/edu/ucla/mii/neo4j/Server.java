@@ -30,8 +30,12 @@ public class Server {
             // let the server endpoint be on a custom port
             config.configuration().setProperty(Configurator.WEBSERVER_PORT_PROPERTY_KEY, 7575);
             WrappingNeoServerBootstrapper server;
-            server = new WrappingNeoServerBootstrapper( graphDb, config );
+            server = new WrappingNeoServerBootstrapper(graphDb, config);
             server.start();
+            server.stop();
+            // PORT_NUMBER=7575
+            // lsof -i tcp:${PORT_NUMBER} | awk 'NR!=1 {print $2}' | xargs kill
+            System.out.println("Done");
         }
     }
 }
