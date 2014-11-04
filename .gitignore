@@ -1,6 +1,7 @@
 *.class
 proposal/
 .idea/
+neo4j-community-2.1.5/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
